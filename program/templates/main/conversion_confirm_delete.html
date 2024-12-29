@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Konfirmasi Hapus Konversi{% endblock %}
+
+{% block content %}
+    <h1>Konfirmasi Hapus Konversi</h1>
+    <p>Anda yakin ingin menghapus konversi ini?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Hapus</button>
+        <a class="inline-link" href="{% url 'conversion_list' %}">Batal</a>
+    </form>
+    
+{% endblock %}

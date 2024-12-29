@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}History Konversi{% endblock %}
+
+{% block content %}
+    <h1>History Konversi</h1>
+    <ul>
+        {% for conversion in conversions %}
+            <li>
+                <p>Decimal: {{ conversion.decimal }}</p>
+                <p>Biner: {{ conversion.biner }}</p>
+                <p>Oktal: {{ conversion.oktal }}</p>
+                <p>Heksadesimal: {{ conversion.heksadesimal }}</p>
+                <p>Pilihan Konversi: {{ conversion.get_pilihan_konversi_display }}</p>
+                <a class="inline-link" href="{% url 'conversion_detail' conversion.pk %}">Detail</a>
+                <p>-------------------------------------------</p>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="inline-link" href="{% url 'conversion_add' %}">Konversi Lagi?</a>
+{% endblock %}

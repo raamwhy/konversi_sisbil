@@ -1,0 +1,31 @@
+<!-- conversion_edit.html -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}Edit Konversi{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h1>Edit Konversi</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.pilihan_konversi.label_tag }}
+            {{ form.pilihan_konversi }}
+            {{ form.field_name.label_tag }}
+            {{ form.field_name }}
+            {% if form.field_name.errors %}
+                <p class="error-message">{{ form.field_name.errors }}</p>
+            {% endif %}
+            <button type="submit">Simpan Perubahan</button>
+        </form>
+    </div>
+    <div class="result-container">
+        <h2>Hasil Konversi</h2>
+        <p>Decimal: {{ conversion.decimal }}</p>
+        <p>Biner: {{ conversion.biner }}</p>
+        <p>Oktal: {{ conversion.oktal }}</p>
+        <p>Heksadesimal: {{ conversion.heksadesimal }}</p>
+        <p>Pilihan Konversi: {{ conversion.get_pilihan_konversi_display }}</p>
+        <a class="inline-link" href="{% url 'conversion_list' %}">Kembali ke History Konversi</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+<!-- menu.html -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}Kalkulator Konversi Sistem Bilangan{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center; margin-bottom: 30px;"></h1>
+    <div style="text-align: center;">
+        <a class="inline-link" class="start-button" href="{% url 'conversion_add' %}">Start Program</a>
+    </div>
+    <div style="margin: 20px; padding: 20px; border: 1px solid #ccc; border-radius: 10px; background-color: #f9f9f9;">
+        <h2 style="color: #333;">Pengenalan Sistem Bilangan</h2>
+        <p style="line-height: 1.6; color: #555;">
+            Sistem bilangan adalah cara untuk mewakili angka dalam bentuk simbolik. Setiap sistem bilangan menggunakan basis yang berbeda untuk mewakili nilai numerik. Berikut ini adalah beberapa sistem bilangan yang paling umum digunakan:
+        </p>
+        <img src="https://circuitglobe.com/wp-content/uploads/2016/09/block-diagram-of-number-system-1.jpg" alt="SistemBilangan" style="width: 100%; max-width: 400px; height: auto; margin: 10px auto; display: block;">
+
+        <h3 style="color: #333;">Sistem Bilangan Desimal</h3>
+        <p style="line-height: 1.6; color: #555;">
+            Sistem bilangan desimal (basis 10) adalah sistem yang paling sering digunakan dalam kehidupan sehari-hari. Sistem ini terdiri dari sepuluh angka: 0, 1, 2, 3, 4, 5, 6, 7, 8, dan 9. Angka desimal digunakan untuk mewakili nilai-nilai mulai dari harga barang hingga jumlah orang. Setiap posisi dalam angka desimal memiliki nilai tempat yang merupakan pangkat dari 10.
+        </p>
+
+        <h3 style="color: #333;">Sistem Bilangan Biner</h3>
+        <p style="line-height: 1.6; color: #555;">
+            Sistem bilangan biner (basis 2) terdiri dari dua angka: 0 dan 1. Sistem ini sangat penting dalam dunia komputasi dan elektronik digital karena komputer menggunakan bilangan biner untuk melakukan operasi. Dalam sistem ini, setiap posisi adalah pangkat dari 2.
+        </p>
+
+        <h3 style="color: #333;">Sistem Bilangan Oktal</h3>
+        <p style="line-height: 1.6; color: #555;">
+            Sistem bilangan oktal (basis 8) menggunakan delapan angka: 0 hingga 7. Sistem ini kadang-kadang digunakan dalam komputasi sebagai cara yang lebih ringkas untuk merepresentasikan bilangan biner karena setiap digit oktal dapat direpresentasikan sebagai tiga digit biner.
+        </p>
+        
+        <h3 style="color: #333;">Sistem Bilangan Hexadesimal</h3>
+        <p style="line-height: 1.6; color: #555;">
+            Sistem bilangan hexadesimal (basis 16) menggunakan angka 0 hingga 9 dan huruf A hingga F untuk mewakili nilai-nilai dari 0 hingga 15. Sistem ini sering digunakan dalam pemrograman komputer dan pengembangan perangkat keras karena satu digit hexadesimal dapat merepresentasikan empat digit biner, sehingga lebih mudah dibaca oleh manusia dibandingkan dengan biner.
+        </p>
+    </div>
+    <ul>
+    </ul>
+{% endblock %}

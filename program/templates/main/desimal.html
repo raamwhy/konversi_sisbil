@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Konversi Desimal{% endblock %}
+
+{% block content %}
+    <h1>Konversi Desimal</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number">Masukkan angka desimal:</label>
+        <input type="text" id="number" name="number" required>
+        <button type="submit">Konversi</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+{% endblock %}

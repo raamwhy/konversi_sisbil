@@ -1,0 +1,22 @@
+<!-- conversion_add.html -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}Kalkulator Konversi Desimal ke Biner, Oktal, Hexadesimal & Sebaliknya{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h1 style="text-align: center; margin-bottom: 30px;">Kalkulator Konversi Desimal ke Biner, Oktal, Hexadesimal & Sebaliknya</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.pilihan_konversi.label_tag }}
+            {{ form.pilihan_konversi }}
+            {{ form.field_name.label_tag }}
+            {{ form.field_name }}
+            {% if form.field_name.errors %}
+                <p class="error-message">{{ form.field_name.errors }}</p>
+            {% endif %}
+            <button type="submit">Konversi</button>
+        </form>
+    </div>
+{% endblock %}

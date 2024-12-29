@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Konversi Oktal{% endblock %}
+
+{% block content %}
+    <h1>Konversi Oktal</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number">Masukkan angka oktal:</label>
+        <input type="text" id="number" name="number" required pattern="[0-7]+" title="Masukkan angka oktal yang valid">
+        <button type="submit">Konversi</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+{% endblock %}

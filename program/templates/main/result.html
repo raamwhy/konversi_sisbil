@@ -1,0 +1,16 @@
+<!-- result.html -->
+
+{% extends 'main/base.html' %}
+
+{% block title %}Hasil Konversi{% endblock %}
+
+{% block content %}
+    <h1>Hasil Konversi</h1>
+    <p>Decimal: {{ conversion.decimal }}</p>
+    <p>Biner: {{ conversion.biner }}</p>
+    <p>Oktal: {{ conversion.oktal }}</p>
+    <p>Heksadesimal: {{ conversion.heksadesimal }}</p>
+    <p>Pilihan Konversi: {{ conversion.get_pilihan_konversi_display }}</p>
+    <a class="inline-link" href="{% url 'conversion_list' %}">History Konversi</a>
+    <a class="inline-link" href="{% url 'conversion_add' %}">Konversi Lagi?</a>
+{% endblock %}

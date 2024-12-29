@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Konversi Heksadesimal{% endblock %}
+
+{% block content %}
+    <h1>Konversi Heksadesimal</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number">Masukkan angka heksadesimal:</label>
+        <input type="text" id="number" name="number" required pattern="[0-9a-fA-F]+" title="Masukkan angka heksadesimal yang valid">
+        <button type="submit">Konversi</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+{% endblock %}

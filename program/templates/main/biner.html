@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Konversi Biner{% endblock %}
+
+{% block content %}
+    <h1>Konversi Biner</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="number">Masukkan angka biner:</label>
+        <input type="text" id="number" name="number" required pattern="[01]+" title="Masukkan angka biner yang valid">
+        <button type="submit">Konversi</button>
+    </form>
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+{% endblock %}
